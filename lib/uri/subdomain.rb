@@ -2,7 +2,7 @@ require 'uri'
 
 module URI::Subdomain
 
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 
   def domain
     host.split('.').last(2).join('.') if host
