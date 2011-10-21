@@ -17,7 +17,9 @@ module URI::Subdomain
   end
 
   def subdomain
-    host.split('.').tap(&:pop).tap(&:pop).join('.') if host
+    return nil if host.nil?
+    subdomain = host.split('.').tap(&:pop).tap(&:pop).join('.')
+    subdomain == "" ? nil : subdomain
   end
 
   def subdomain= subdomain
