@@ -23,7 +23,7 @@ module URI::Subdomain
   end
 
   def subdomain= subdomain
-    self.host = "#{subdomain}.#{domain}"
+    self.host = subdomain.nil? ? domain : "#{subdomain}.#{domain}"
   end
 
   URI::Generic.send :include, self
